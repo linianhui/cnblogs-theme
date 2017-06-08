@@ -481,13 +481,3 @@ body {
 #cnblogs_post_body ul {
     margin-left: 24px
 }
-
-.cnblogs_code {
-    border: 1px solid #ccc;
-    border-left: 6px solid rgba(21, 193, 60, 1);
-    padding-left: 6px
-}
-
-.cnblogs_code_hide {
-    display: none
-}
