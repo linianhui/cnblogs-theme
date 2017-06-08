@@ -1,0 +1,681 @@
+body {
+    position: relative;
+    margin: 0;
+    height: 100%;
+    line-height: 1.5;
+    background-color: #FFF;
+    padding: 0
+}
+
+h1,
+h2,
+h3,
+h4,
+ul {
+    margin: 0;
+    padding: 0
+}
+
+ul {
+    list-style: none
+}
+
+a {
+    text-decoration: none
+}
+
+a:active,
+a:link,
+a:visited {
+    color: #0681ba
+}
+
+a:hover {
+    color: #f60
+}
+
+a img {
+    border-width: 0
+}
+
+table,
+tbody,
+td,
+th,
+thead,
+tr {
+    border-collapse: collapse;
+    border: 1px solid silver
+}
+
+table {
+    width: 100%
+}
+
+#home {
+    position: relative;
+    margin: 24px 0;
+}
+
+#header {
+    padding: 0 68px;
+}
+
+.title {
+    text-align: right;
+    font-size: 32px
+}
+
+.subtitle {
+    text-align: right;
+    color: #999;
+    font-size: 12px;
+    margin: 4px
+}
+
+#navigator {
+    position: relative;
+    text-align: right;
+    border-bottom: 1px solid #0681ba
+}
+
+#navList {
+    position: relative;
+    display: inline-block
+}
+
+#navList li {
+    display: inline-block
+}
+
+.menu {
+    display: block;
+    width: 5em;
+    font-size: 16px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    text-align: center
+}
+
+.menu:hover {
+    color: #fff;
+    background-color: #0681ba
+}
+
+.blogStats {
+    position: absolute;
+    display: inline-block;
+    left: 0;
+    bottom: 6px;
+    color: #999;
+    font-size: 12px
+}
+
+#main {
+    position: relative;
+    font-size: 0;
+    margin-bottom: 24px;
+    margin-top: 24px;
+}
+
+#mainContent {
+    display: inline-block;
+    font-size: 14px;
+    width: 74%;
+    padding-left: 68px;
+    box-sizing: border-box;
+}
+
+.forFlow {
+    position: relative;
+    padding: 24px;
+    box-shadow: 0 0 2px #ccc
+}
+
+#topics {
+    position: relative
+}
+
+.postBody {
+    margin-top: 24px
+}
+
+#blog_post_info_block {
+    position: relative;
+    margin-top: 24px
+}
+
+#BlogPostCategory {
+    position: relative
+}
+
+#EntryTag {
+    position: relative;
+    margin-top: 12px
+}
+
+#blog_post_info {
+    position: relative
+}
+
+#green_channel {
+    position: relative;
+    display: inline-block;
+    padding: 8px;
+    margin-top: 12px;
+    border: 1px dashed #999
+}
+
+#green_channel_contact,
+#green_channel_digg,
+#green_channel_favorite,
+#green_channel_follow {
+    display: inline-block;
+    vertical-align: middle;
+    color: #fff;
+    padding: 6px 0;
+    width: 5em;
+    text-align: center;
+    margin-right: 12px
+}
+
+#green_channel_digg {
+    background-color: #2daebf
+}
+
+#green_channel_follow {
+    background-color: #e33100
+}
+
+#green_channel_favorite {
+    background-color: #ffb515
+}
+
+#green_channel_contact {
+    background-color: #555
+}
+
+#green_channel_wechat,
+#green_channel_weibo {
+    display: inline-block;
+    vertical-align: middle
+}
+
+#green_channel_wechat img,
+#green_channel_weibo img {
+    width: 24px;
+    height: 24px
+}
+
+#author_profile {
+    position: relative;
+    margin-top: 12px
+}
+
+#author_profile_info {
+    position: relative;
+    display: block
+}
+
+#author_profile_detail {
+    position: relative;
+    display: inline-block;
+    margin-left: 12px
+}
+
+#post_next_prev {
+    margin-top: 12px
+}
+
+#div_digg {
+    background-color: #fff;
+    bottom: 10px;
+    box-shadow: 0 0 6px #ccc;
+    display: block;
+    padding: 12px 6px;
+    position: fixed;
+    left: 74%;
+    text-align: center;
+    z-index: 1000;
+    margin-left: 24px;
+}
+
+.buryit,
+.diggit {
+    background-image: url(http://static.cnblogs.com/images/upup.gif);
+    cursor: pointer;
+    display: inline-block;
+    height: 52px;
+    text-align: center;
+    width: 46px
+}
+
+.diggit {
+    background-image: url(http://static.cnblogs.com/images/upup.gif)
+}
+
+.buryit {
+    background-image: url(http://static.cnblogs.com/images/downdown.gif);
+    margin-left: 24px
+}
+
+.diggword {
+    margin-top: 6px
+}
+
+#sideBar {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    vertical-align: top;
+    width: 26%;
+    box-sizing: border-box;
+    padding-right: 68px;
+}
+
+#sideBarMain {
+    padding-left: 24px;
+    font-size: 14px
+}
+
+.newsItem {
+    margin-top: 0
+}
+
+#leftcontentcontainer,
+#recent_comments_wrap,
+#topfeedback_posts_wrap,
+#topview_posts_wrap,
+.catListPostArchive,
+.catListPostCategory,
+.catListTag {
+    margin-top: 24px
+}
+
+.catListTitle {
+    color: #999;
+    padding-bottom: 4px;
+    margin-bottom: 6px;
+    border-bottom: 1px dashed #0681ba
+}
+
+.recent_comment_title {
+    margin-top: 6px
+}
+
+.recent_comment_body {
+    font-size: 12px
+}
+
+.recent_comment_author {
+    font-size: 12px;
+    text-align: right;
+    color: #999
+}
+
+#footer {
+    border-top: 1px solid #0681ba;
+    padding-top: 10px;
+    text-align: center
+}
+
+#blog-comments-placeholder {
+    position: relative;
+    margin-top: 24px
+}
+
+#comments_pager_bottom,
+#comments_pager_top {
+    position: relative;
+    text-align: right;
+    border-bottom: 1px solid #0681ba
+}
+
+.pager {
+    display: inline-block;
+    background-color: #0681ba;
+    font-size: 16px;
+    margin-top: 12px;
+    padding: 6px;
+    margin-bottom: -1px
+}
+
+.pager .current {
+    padding: 6px;
+    margin-right: 6px
+}
+
+.pager a {
+    color: #FFF;
+    padding: 6px;
+    margin-right: 6px
+}
+
+.pager a:hover {
+    background-color: #07628d
+}
+
+.feedback_area_title {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 6px 12px;
+    display: inline-block;
+    background-color: #0681ba
+}
+
+.feedbackItem {
+    margin-top: 12px;
+    position: relative;
+    border-left: 1px solid #0681ba;
+    border-bottom: 1px solid #0681ba;
+    padding-bottom: 7px
+}
+
+.layer {
+    padding: 6px;
+    background-color: #0681ba;
+    color: #FFF;
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 10px
+}
+
+.layer:active,
+.layer:hover,
+.layer:link,
+.layer:visited {
+    color: #FFF
+}
+
+.blog_comment_body {
+    margin: 10px 20px
+}
+
+.feedbackManage {
+    position: absolute;
+    right: 0;
+    bottom: 7px
+}
+
+.louzhu {
+    color: #f60
+}
+
+.louzhu+span {
+    color: #f60
+}
+
+.comment_date {
+    margin-right: 10px
+}
+
+.comment_actions a,
+.comment_bury,
+.comment_digg {
+    padding: 8px 10px
+}
+
+.comment_actions a:hover,
+.comment_bury:hover,
+.comment_digg:hover {
+    background-color: #0681ba;
+    color: #fff
+}
+
+#comment_form {
+    margin-top: 24px
+}
+
+#comment_nav {
+    border-bottom: 1px solid #0681ba;
+    font-size: 16px;
+    margin-top: 12px;
+    text-align: right
+}
+
+#comment_nav a {
+    background-color: #0681ba;
+    color: #fff;
+    display: inline-block;
+    margin-left: 6px;
+    padding: 6px
+}
+
+#comment_nav a:hover {
+    background-color: #07628d
+}
+
+#commentform_title {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 6px 12px;
+    display: inline-block;
+    background-color: #0681ba
+}
+
+.commentbox_title {
+    position: relative
+}
+
+.commentbox_title_left {
+    position: relative;
+    display: inline-block
+}
+
+.commentbox_title_right {
+    position: relative;
+    display: inline-block
+}
+
+#tbCommentBody {
+    width: 100%;
+    height: 160px
+}
+
+#btn_comment_submit {
+    background-color: #0681ba;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 8px
+}
+
+.entrylistPosttitle,
+.postTitl2,
+.postTitle {
+    border-bottom: 1px dashed #0681ba;
+    font-size: 20px;
+    padding-bottom: 4px
+}
+
+.entrylistItemPostDesc,
+.postDesc,
+.postDesc2 {
+    color: #999;
+    font-size: 12px;
+    margin-top: 12px;
+    text-align: right
+}
+
+.entrylistDescription {
+    color: #999;
+    font-style: italic;
+    text-indent: 2em;
+    margin: 10px 0
+}
+
+.PostList,
+.day,
+.entrylistItem {
+    margin: 20px 0
+}
+
+.dayTitle {
+    display: none
+}
+
+.entrylistPostSummary,
+.postCon {
+    margin: 10px 0;
+    font-size: 14px
+}
+
+.topicListFooter {
+    margin: 20px;
+    text-align: center
+}
+
+#cnblogs_post_body {
+    position: relative
+}
+
+#cnblogs_post_body h1 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    margin-top: 12px;
+    padding: 6px 6px 6px 0
+}
+
+#cnblogs_post_body h2 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    margin-top: 12px;
+    padding: 4px 4px 4px 0;
+}
+
+#cnblogs_post_body h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    margin-top: 12px;
+    padding: 4px 4px 4px 0;
+}
+
+#cnblogs_post_body p {
+    font-size: 14px;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    text-indent: 2em;
+    width: 100%
+}
+
+#cnblogs_post_body li img,
+#cnblogs_post_body p img {
+    display: block;
+    max-width: 100%;
+    width: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 0 4px #ccc
+}
+
+#cnblogs_post_body blockquote {
+    border-left: 5px solid #eee;
+    color: #333;
+    font-size: 12px;
+    font-style: italic;
+    margin: 12px 0 12px 36px;
+    padding: 6px 12px
+}
+
+#cnblogs_post_body ul {
+    margin-left: 24px
+}
+
+.cnblogs_code {
+    border: 1px solid #ccc;
+    border-left: 6px solid rgba(21, 193, 60, 1);
+    padding-left: 6px
+}
+
+#fiexdBar {
+    z-index: 100;
+    position: fixed;
+    display: inline-block;
+    width: 48px;
+    bottom: 10px;
+    right: 10px;
+    color: #fff
+}
+
+#fiexdBar a {
+    color: #fff
+}
+
+.fiexdBar-Item {
+    display: block;
+    height: 48px;
+    line-height: 48px;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    background-color: #0681ba;
+    margin-top: 10px;
+    cursor: pointer
+}
+
+#fiexdBar-BackTop {
+    font-size: 24px
+}
+
+.fiexdBar-Item:hover {
+    box-shadow: 0 0 6px #0681ba
+}
+
+#tableContent {
+    position: fixed;
+    display: block;
+    bottom: 100px;
+    z-index: 100;
+    background-color: #fff;
+    box-shadow: 0 0 6px #ccc;
+    line-height: 1.6;
+    padding: 12px 0;
+    margin-left: 24px;
+    max-width: 22%
+}
+
+.tableContent-Item {
+    display: block;
+    font-size: 12px;
+    padding-right: 12px
+}
+
+.tableContent-h1 {
+    padding-left: 12px
+}
+
+.tableContent-h2 {
+    padding-left: 24px
+}
+
+.tableContent-h3 {
+    padding-left: 36px
+}
+
+.tableContent-Item-Current {
+    line-height: 2;
+    box-shadow: 0 0 4px #ccc;
+    background-color: #0681ba !important;
+    color: #fff !important;
+}
+
+.cnblogs_code_hide {
+    display: none
+}
+
+#MySignature {
+    border: 1px solid #E5E5E5;
+    padding: 10px;
+    background: #FFFEFE url(http://images.cnblogs.com/cnblogs_com/grenet/226272/o_o_o_info.png) no-repeat scroll 15px 50%;
+    padding-left: 80px;
+}
+
+#MySignature div {
+    line-height: 25px;
+}
