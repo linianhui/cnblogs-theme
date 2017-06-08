@@ -1,0 +1,33 @@
+#fiexdBar {
+    z-index: 100;
+    position: fixed;
+    display: inline-block;
+    width: 48px;
+    bottom: 10px;
+    right: 10px;
+    color: #fff
+}
+
+#fiexdBar a {
+    color: #fff
+}
+
+.fiexdBar-Item {
+    display: block;
+    height: 48px;
+    line-height: 48px;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    background-color: #0681ba;
+    margin-top: 10px;
+    cursor: pointer
+}
+
+#fiexdBar-BackTop {
+    font-size: 24px
+}
+
+.fiexdBar-Item:hover {
+    box-shadow: 0 0 6px #0681ba
+}
