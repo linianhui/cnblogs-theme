@@ -215,12 +215,6 @@ body {
     color: #999
 }
 
-#footer {
-    border-top: 1px solid #0681ba;
-    padding-top: 10px;
-    text-align: center
-}
-
 #blog-comments-placeholder {
     position: relative;
     margin-top: 24px
