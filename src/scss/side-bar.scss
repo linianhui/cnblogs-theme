@@ -1,10 +1,24 @@
-#sideBar {
-    display: inline-block;
-    position: absolute;
-    right: 0;
-    top: 0;
-    vertical-align: top;
-    width: 26%;
-    box-sizing: border-box;
-    padding-right: 68px;
+#sideBarMain {
+    font-size: 14px
+}
+
+.newsItem {
+    margin-top: 0
+}
+
+#leftcontentcontainer,
+#recent_comments_wrap,
+#topfeedback_posts_wrap,
+#topview_posts_wrap,
+.catListPostArchive,
+.catListPostCategory,
+.catListTag {
+    margin-top: 24px
+}
+
+.catListTitle {
+    color: #999;
+    padding-bottom: 4px;
+    margin-bottom: 6px;
+    border-bottom: 1px dashed #0681ba
 }

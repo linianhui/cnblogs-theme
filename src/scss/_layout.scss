@@ -28,19 +28,19 @@ body {
 #mainContent {
     display: inline-block;
     font-size: 14px;
-    width: 74%;
+    width: 75%;
     box-sizing: border-box;
+    padding-right: 32px;
 }
 
 #sideBar {
-    display: inline-block;
     position: absolute;
+    display: inline-block;
     right: 0;
     top: 0;
     vertical-align: top;
-    width: 26%;
+    width: 25%;
     box-sizing: border-box;
-    padding-right: 68px;
 }
 
 #footer {
