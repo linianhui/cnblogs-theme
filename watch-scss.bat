@@ -1,0 +1,1 @@
+scss --watch ./src/scss/__.scss:lnh.cnblogs.css
