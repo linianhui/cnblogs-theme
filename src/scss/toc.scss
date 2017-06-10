@@ -1,0 +1,39 @@
+.lnh_toc_warp {
+    position: fixed;
+    display: inline-block;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 9999;
+    background-color: #fff;
+    box-shadow: 0 0 6px #ccc;
+    line-height: 1.6;
+    overflow-y: auto;
+    min-width: 240px;
+    max-width: 320px;
+    .toc {
+        position: relative;
+        display: block;
+        padding: 64px 0;
+        .item {
+            display: block;
+            font-size: 12px;
+            padding-right: 12px
+        }
+        .item-h1 {
+            padding-left: 12px
+        }
+        .item-h2 {
+            padding-left: 24px
+        }
+        .item-h3 {
+            padding-left: 36px
+        }
+        .item.current {
+            line-height: 2;
+            box-shadow: 0 0 4px #ccc;
+            background-color: #0681ba !important;
+            color: #fff !important;
+        }
+    }
+}
