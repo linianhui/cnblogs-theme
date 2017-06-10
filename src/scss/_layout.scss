@@ -1,34 +1,46 @@
 body {
     position: relative;
     margin: 0;
+    padding: 0;
     height: 100%;
     line-height: 1.5;
     background-color: #FFF;
-    padding: 0
+}
+
+#home,
+#header,
+#main,
+#footer {
+    position: relative;
+    display: block;
+    margin: 32px 0;
+    box-sizing: border-box;
 }
 
 #home {
-    position: relative;
-    margin: 24px 0;
-}
-
-#header {
     padding: 0 68px;
 }
 
 #main {
-    position: relative;
     font-size: 0;
-    margin-bottom: 24px;
-    margin-top: 24px;
 }
 
 #mainContent {
     display: inline-block;
     font-size: 14px;
     width: 74%;
-    padding-left: 68px;
     box-sizing: border-box;
+}
+
+#sideBar {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    vertical-align: top;
+    width: 26%;
+    box-sizing: border-box;
+    padding-right: 68px;
 }
 
 #footer {
