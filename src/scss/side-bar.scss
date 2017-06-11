@@ -1,24 +1,42 @@
 #sideBarMain {
-    font-size: 14px
+    position: relative;
 }
 
-.newsItem {
-    margin-top: 0
-}
-
-#leftcontentcontainer,
-#recent_comments_wrap,
-#topfeedback_posts_wrap,
-#topview_posts_wrap,
-.catListPostArchive,
-.catListPostCategory,
-.catListTag {
-    margin-top: 24px
+.sidebar-block {
+    margin: 24px 0;
 }
 
 .catListTitle {
     color: #999;
-    padding-bottom: 4px;
-    margin-bottom: 6px;
-    border-bottom: 1px dashed #0681ba
+    margin-bottom: 8px;
+    font-weight: normal;
+    span {
+        margin-left: 4px;
+    }
+}
+
+#sidebar_search_box {
+    .div_my_zzk {
+        margin-bottom: 8px;
+    }
+    .input_my_zzk {
+        font-size: 16px;
+    }
+    .btn_my_zzk {
+        margin-left: 8px;
+    }
+}
+
+.recent_comment_title {
+    margin-top: 6px
+}
+
+.recent_comment_body {
+    font-size: 12px
+}
+
+.recent_comment_author {
+    font-size: 12px;
+    text-align: right;
+    color: #999
 }
