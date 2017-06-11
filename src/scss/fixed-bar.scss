@@ -11,17 +11,12 @@
         display: block;
         .item {
             display: block;
-            height: 48px;
-            line-height: 48px;
-            color: #fff;
-            font-size: 14px;
-            text-align: center;
-            background-color: #0681ba;
-            margin-top: 10px;
-            cursor: pointer
-        }
-        .item:hover {
-            box-shadow: 0 0 6px #0681ba
+            text-align: left;
+            padding: 8px;
+            cursor: pointer;
+            i {
+                font-size: 24px;
+            }
         }
     }
 }
