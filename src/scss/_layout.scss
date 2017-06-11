@@ -26,21 +26,22 @@ body {
 }
 
 #mainContent {
+    position: relative;
     display: inline-block;
-    font-size: 14px;
-    width: 75%;
     box-sizing: border-box;
+    width: 75%;
+    vertical-align: top;
+    font-size: 14px;
     padding-right: 32px;
 }
 
 #sideBar {
-    position: absolute;
+    position: relative;
     display: inline-block;
-    right: 0;
-    top: 0;
-    vertical-align: top;
-    width: 25%;
     box-sizing: border-box;
+    width: 25%;
+    vertical-align: top;
+    font-size: 14px;
 }
 
 #footer {
