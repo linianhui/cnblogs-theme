@@ -3,19 +3,24 @@
     display: block;
     z-index: 9999;
     width: 48px;
-    bottom: 32px;
-    right: 0;
+    bottom: 24px;
+    right: 8px;
     color: #fff;
     .fixed-bar {
         position: relative;
         display: block;
         .item {
             display: block;
-            text-align: left;
-            padding: 8px;
+            text-align: center;
             cursor: pointer;
             i {
-                font-size: 24px;
+                display: block;
+                height: 48px;
+                line-height: 48px;
+                font-size: 32px;
+            }
+            i:hover {
+                font-size: 36px;
             }
         }
     }
