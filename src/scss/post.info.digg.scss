@@ -40,9 +40,14 @@
         position: absolute;
         bottom: 0;
         left: 36px;
-        color: #999;
         font-size: 12px;
         font-style: italic;
+    }
+    .diggnum {
+        color: #73dc77;
+    }
+    .burynum {
+        color: #999;
     }
     &:hover {
         color: #f60;
