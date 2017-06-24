@@ -25,6 +25,7 @@
     height: 36px;
     vertical-align: text-bottom;
     font-size: 32px;
+    overflow: visible;
     &::before {
         position: absolute;
         font-family: 'FontAwesome';
@@ -38,7 +39,7 @@
     .burynum {
         position: absolute;
         bottom: 0;
-        right: 0;
+        left: 36px;
         color: #999;
         font-size: 12px;
         font-style: italic;
