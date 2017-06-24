@@ -41,7 +41,7 @@
     width: auto;
     margin-top: 10px;
     margin-bottom: 10px;
-    box-shadow: 0 0 4px #ccc
+    box-shadow: 0 0 3px #ddd;
 }
 
 #cnblogs_post_body blockquote {
@@ -55,4 +55,8 @@
 
 #cnblogs_post_body ul {
     margin-left: 24px
+}
+
+#cnblogs_post_body strong {
+    font-weight: 600;
 }

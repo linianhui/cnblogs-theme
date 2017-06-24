@@ -1,7 +1,22 @@
 .cnblogs_code {
-    border: 1px solid #ccc;
-    border-left: 6px solid rgba(21, 193, 60, 1);
-    padding-left: 6px
+    background-color: #F9F9F9;
+    border-width: 0;
+}
+
+div.cnblogs_code {
+    border-left: 6px solid #73dc77;
+    margin: 10px 0;
+    padding: 8px;
+}
+
+span.cnblogs_code {
+    background-color: #efefef;
+    padding: 2px;
+    margin: 0;
+}
+
+.cnblogs_code_toolbar {
+    display: none
 }
 
 .cnblogs_code_hide {
