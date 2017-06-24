@@ -1,0 +1,35 @@
+#div_digg {
+    background-color: #fff;
+    bottom: 10px;
+    box-shadow: 0 0 6px #ccc;
+    display: block;
+    padding: 12px 6px;
+    position: fixed;
+    left: 74%;
+    text-align: center;
+    z-index: 1000;
+    margin-left: 24px;
+}
+
+.buryit,
+.diggit {
+    background-image: url(http://static.cnblogs.com/images/upup.gif);
+    cursor: pointer;
+    display: inline-block;
+    height: 52px;
+    text-align: center;
+    width: 46px
+}
+
+.diggit {
+    background-image: url(http://static.cnblogs.com/images/upup.gif)
+}
+
+.buryit {
+    background-image: url(http://static.cnblogs.com/images/downdown.gif);
+    margin-left: 24px
+}
+
+.diggword {
+    margin-top: 6px
+}

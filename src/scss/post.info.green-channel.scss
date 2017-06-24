@@ -1,0 +1,49 @@
+#green_channel {
+    position: relative;
+    display: inline-block;
+    padding: 8px;
+    margin-top: 12px;
+    border: 1px dashed #999;
+    width: unset;
+}
+
+#green_channel_contact,
+#green_channel_digg,
+#green_channel_favorite,
+#green_channel_follow {
+    display: inline-block;
+    vertical-align: middle;
+    color: #fff;
+    padding: 6px 0;
+    width: 5em;
+    text-align: center;
+    margin-right: 12px
+}
+
+#green_channel_digg {
+    background-color: #2daebf
+}
+
+#green_channel_follow {
+    background-color: #e33100
+}
+
+#green_channel_favorite {
+    background-color: #ffb515
+}
+
+#green_channel_contact {
+    background-color: #555
+}
+
+#green_channel_wechat,
+#green_channel_weibo {
+    display: inline-block;
+    vertical-align: middle
+}
+
+#green_channel_wechat img,
+#green_channel_weibo img {
+    width: 24px;
+    height: 24px
+}
