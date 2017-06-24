@@ -1,35 +1,68 @@
 #div_digg {
-    background-color: #fff;
-    bottom: 10px;
-    box-shadow: 0 0 6px #ccc;
-    display: block;
-    padding: 12px 6px;
     position: fixed;
-    left: 74%;
+    display: block;
+    bottom: 32px;
+    float: unset;
+    width: unset;
+    margin: 0;
+    padding: 12px;
+    background-color: #fff;
+    box-shadow: 0 0 2px #ccc;
     text-align: center;
     z-index: 1000;
-    margin-left: 24px;
 }
 
 .buryit,
 .diggit {
-    background-image: url(http://static.cnblogs.com/images/upup.gif);
-    cursor: pointer;
+    position: relative;
+    float: unset;
+    margin: 0;
+    padding: 0;
     display: inline-block;
-    height: 52px;
-    text-align: center;
-    width: 46px
+    background: unset;
+    color: #0681ba;
+    width: 48px;
+    height: 36px;
+    vertical-align: text-bottom;
+    font-size: 32px;
+    &::before {
+        position: absolute;
+        font-family: 'FontAwesome';
+        left: 0;
+        top: 0;
+        width: 36px;
+        height: 36px;
+        line-height: 36px;
+    }
+    .diggnum,
+    .burynum {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        color: #999;
+        font-size: 12px;
+        font-style: italic;
+    }
+    &:hover {
+        color: #f60;
+        font-size: 36px;
+    }
 }
 
 .diggit {
-    background-image: url(http://static.cnblogs.com/images/upup.gif)
+    &::before {
+        content: "\f164";
+    }
 }
 
 .buryit {
-    background-image: url(http://static.cnblogs.com/images/downdown.gif);
-    margin-left: 24px
+    margin-left: 12px;
+    &::before {
+        content: "\f165";
+    }
 }
 
 .diggword {
-    margin-top: 6px
+    margin: 0;
+    padding: 0;
 }

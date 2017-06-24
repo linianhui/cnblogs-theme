@@ -11,10 +11,15 @@
     overflow-y: auto;
     min-width: 240px;
     max-width: 320px;
+    .title {
+        margin-top: 32px;
+        padding-left: 12px;
+        font-size: 16px;
+    }
     .toc {
         position: relative;
+        margin-top: 12px;
         display: block;
-        padding: 64px 0;
         .item {
             display: block;
             font-size: 12px;
