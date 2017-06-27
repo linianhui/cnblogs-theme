@@ -2,9 +2,9 @@
     position: fixed;
     display: block;
     z-index: 9999;
-    width: 48px;
+    width: 40px;
     bottom: 24px;
-    right: 8px;
+    right: 12px;
     color: #fff;
     .fixed-bar {
         position: relative;
@@ -15,12 +15,12 @@
             cursor: pointer;
             i {
                 display: block;
-                height: 48px;
-                line-height: 48px;
-                font-size: 32px;
+                height: 40px;
+                line-height: 40px;
+                font-size: 27px;
             }
             i:hover {
-                font-size: 36px;
+                font-size: 32px;
             }
         }
     }

@@ -1,5 +1,5 @@
 #cnblogs_post_body {
-    position: relative
+    position: relative;
 }
 
 #cnblogs_post_body h1 {
@@ -28,8 +28,7 @@
 
 #cnblogs_post_body p {
     font-size: 14px;
-    margin-bottom: 8px;
-    margin-top: 8px;
+    margin: 10px 0;
     text-indent: 2em;
     width: 100%
 }
@@ -45,18 +44,25 @@
 }
 
 #cnblogs_post_body blockquote {
-    border-left: 5px solid #eee;
+    border-left: 6px solid #eee;
     color: #333;
     font-size: 12px;
     font-style: italic;
-    margin: 12px 0 12px 36px;
-    padding: 6px 12px
+    margin: 10px 0 10px 2em;
+    padding: 6px 12px;
+    p {
+        margin: 2px 0;
+        text-indent: 0;
+        padding: 0;
+    }
 }
 
-#cnblogs_post_body ul {
-    margin-left: 24px
+#cnblogs_post_body ul,
+#cnblogs_post_body ol {
+    margin: 8px 0;
 }
 
 #cnblogs_post_body strong {
-    font-weight: 600;
+    font-weight: bold;
+    font-size: 15px;
 }

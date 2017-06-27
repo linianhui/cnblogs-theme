@@ -20,7 +20,7 @@
     padding: 0;
     display: inline-block;
     background: unset;
-    color: #0681ba;
+    color: #f60;
     width: 48px;
     height: 36px;
     vertical-align: text-bottom;
@@ -40,18 +40,18 @@
         position: absolute;
         bottom: 0;
         left: 36px;
-        font-size: 12px;
+        font-size: 16px;
         font-style: italic;
     }
     .diggnum {
-        color: #73dc77;
+        color: #ea4335;
     }
     .burynum {
         color: #999;
     }
     &:hover {
-        color: #f60;
         font-size: 36px;
+        color: #f66;
     }
 }
 
