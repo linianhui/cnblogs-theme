@@ -43,6 +43,10 @@
     box-shadow: 0 0 3px #ddd;
 }
 
+#cnblogs_post_body p img {
+    margin-left: -2em;
+}
+
 #cnblogs_post_body blockquote {
     border-left: 6px solid #eee;
     color: #333;
