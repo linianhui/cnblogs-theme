@@ -37,12 +37,10 @@
     box-shadow: 0 0 3px #ddd;
 }
 
-#cnblogs_post_body li img {
-    margin: 0;
-}
-
+#cnblogs_post_body li img,
 #cnblogs_post_body p img {
-    margin: 0 0 0 -2em;
+    margin: 0;
+    display: block;
 }
 
 #cnblogs_post_body blockquote {
