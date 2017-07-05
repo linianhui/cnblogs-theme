@@ -28,7 +28,7 @@
 
 #cnblogs_post_body p {
     font-size: 14px;
-    margin: 10px 0;
+    margin: 10px 0 0 0;
     text-indent: 2em;
     width: 100%
 }
@@ -38,8 +38,8 @@
     display: inline-block;
     max-width: 100%;
     width: auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin: 0;
+    padding: 0;
     box-shadow: 0 0 3px #ddd;
 }
 
