@@ -26,25 +26,23 @@
     padding: 4px 4px 4px 0;
 }
 
-#cnblogs_post_body p {
-    font-size: 14px;
-    margin: 10px 0 0 0;
-    text-indent: 2em;
-    width: 100%
-}
-
-#cnblogs_post_body li img,
-#cnblogs_post_body p img {
+#cnblogs_post_body img,
+{
     display: inline-block;
     max-width: 100%;
     width: auto;
-    margin: 0;
+    margin: 10px 0;
     padding: 0;
+    border-width: 0;
     box-shadow: 0 0 3px #ddd;
 }
 
+#cnblogs_post_body li img {
+    margin: 0;
+}
+
 #cnblogs_post_body p img {
-    margin-left: -2em;
+    margin: 0 0 0 -2em;
 }
 
 #cnblogs_post_body blockquote {
