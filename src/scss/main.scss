@@ -9,7 +9,7 @@
 }
 
 .postBody {
-    margin-top: 24px
+    margin-top: 0;
 }
 
 #blog_post_info_block {
@@ -200,4 +200,17 @@
 .topicListFooter {
     margin: 20px;
     text-align: center
+}
+
+.post-categoty-tags {
+    text-align: right;
+    margin-top: 10px;
+    font-style: italic;
+    color: #999;
+    font-size: 12px;
+    
+    a {
+        font-size: 14px;
+        font-style: normal;
+    }
 }
