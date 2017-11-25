@@ -37,10 +37,18 @@
     box-shadow: 0 0 3px #ddd;
 }
 
+#cnblogs_post_body p {
+    font-size: 14px;
+    margin: 10px 0 0 0;
+    text-indent: 0em;
+    width: 100%;
+}
+
 #cnblogs_post_body li img,
 #cnblogs_post_body p img {
     margin: 0;
     display: block;
+    font-size:0;
 }
 
 #cnblogs_post_body blockquote {
