@@ -4,14 +4,16 @@
 }
 
 div.cnblogs_code {
-    border-left: 6px solid #73dc77;
+    border-left: 4px solid #73dc77;
     margin: 10px 0;
     padding: 8px;
 }
 
 span.cnblogs_code {
+    font-size: 12px !important;
+    vertical-align: middle;
     background-color: #efefef;
-    padding: 2px;
+    padding: 2px 4px;
     margin: 0;
 }
 

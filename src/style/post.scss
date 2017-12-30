@@ -1,77 +1,67 @@
 #cnblogs_post_body {
     position: relative;
-}
-
-#cnblogs_post_body h1 {
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 12px;
-    margin-top: 12px;
-    padding: 6px 6px 6px 0
-}
-
-#cnblogs_post_body h2 {
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 12px;
-    margin-top: 12px;
-    padding: 4px 4px 4px 0;
-}
-
-#cnblogs_post_body h3 {
-    font-size: 16px;
-    font-weight: 700;
-    margin-bottom: 12px;
-    margin-top: 12px;
-    padding: 4px 4px 4px 0;
-}
-
-#cnblogs_post_body img
-{
-    display: inline-block;
-    max-width: 100%;
-    width: auto;
-    margin: 10px 0;
-    padding: 0;
-    border-width: 0;
-    box-shadow: 0 0 3px #ddd;
-}
-
-#cnblogs_post_body p {
-    font-size: 14px;
-    margin: 10px 0 0 0;
-    text-indent: 0em;
-    width: 100%;
-}
-
-#cnblogs_post_body li img,
-#cnblogs_post_body p img {
-    margin: 0;
-    display: block;
-    font-size:0;
-}
-
-#cnblogs_post_body blockquote {
-    border-left: 6px solid #eee;
-    color: #333;
-    font-size: 12px;
-    font-style: italic;
-    margin: 10px 0 10px 2em;
-    padding: 6px 12px;
-    word-break: break-all;
-    p {
-        margin: 2px 0;
-        text-indent: 0;
-        padding: 0;
+    h1 {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 12px;
+        margin-top: 12px;
+        padding: 6px 6px 6px 0
     }
-}
-
-#cnblogs_post_body ul,
-#cnblogs_post_body ol {
-    margin: 8px 0;
-}
-
-#cnblogs_post_body strong {
-    font-weight: bold;
-    font-size: 15px;
+    h2 {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 12px;
+        margin-top: 12px;
+        padding: 4px 4px 4px 0;
+    }
+    h3 {
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 12px;
+        margin-top: 12px;
+        padding: 4px 4px 4px 0;
+    }
+    img {
+        display: inline-block;
+        max-width: 100%;
+        width: auto;
+        margin: 10px 0;
+        padding: 0;
+        border-width: 0;
+        box-shadow: 0 0 3px #ddd;
+    }
+    p {
+        font-size: 14px;
+        margin: 10px 0 0 0;
+        text-indent: 0em;
+        width: 100%;
+    }
+    li img,
+    p img {
+        margin: 0;
+        display: block;
+        font-size: 0;
+    }
+    blockquote {
+        border-left: 6px solid #eee;
+        color: #333;
+        font-size: 12px;
+        font-style: italic;
+        margin: 10px 0 10px 2em;
+        padding: 6px 12px;
+        word-break: break-all;
+        p {
+            margin: 2px 0;
+            text-indent: 0;
+            padding: 0;
+        }
+    }
+    ul,
+    ol {
+        margin: 8px 0;
+    }
+    strong {
+        font-weight: bold;
+        font-size: 15px;
+    }
 }
