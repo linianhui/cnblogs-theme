@@ -1,1 +1,0 @@
-sass ./src/style/_.scss:./dist/lnh.cnblogs.css --style compressed --sourcemap=none --no-cache

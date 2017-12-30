@@ -1,2 +1,2 @@
-# cnblogs.theme
-theme for http://linianhui.cnblogs.com .
+# Cnblogs Theme
+Theme for http://linianhui.cnblogs.com .
