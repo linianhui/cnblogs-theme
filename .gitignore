@@ -1,4 +1,5 @@
-*.css
 *.css.map
 *.scssc
-/dist
+.scss-cache/
+dist/**
+!dist/README.md
