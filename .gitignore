@@ -2,4 +2,4 @@
 *.scssc
 .scss-cache/
 dist/**
-!dist/README.md
+!.gitkeep
