@@ -64,4 +64,12 @@
         font-weight: bold;
         font-size: 15px;
     }
+    table,
+    tr,
+    th,
+    td {
+        border: 1px solid silver;
+        border-collapse: collapse;
+        padding: 2px;
+    }
 }
