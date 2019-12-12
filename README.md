@@ -7,7 +7,7 @@ Theme for http://linianhui.cnblogs.com .
 
 1. ruby用户 : `gem install sass`
 2. node用户 : `npm install -g sass`
-3. docker用户 : `docker pull lnhcode/sass`(https://hub.docker.com/r/lnhcode/sass)
+3. docker用户 : `docker pull lnhcode/sass:1.23.7`(https://hub.docker.com/r/lnhcode/sass)
 
 # 3. 热更新（结合Chrome调试用）
 
