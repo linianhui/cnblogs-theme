@@ -23,7 +23,7 @@ Theme for http://linianhui.cnblogs.com .
     docker run --rm \
                --volume $(pwd):/build \
                --workdir /build \
-               lnhcode/sass \
+               lnhcode/sass:1.23.7 \
                sh build.sh 
     ```
 
