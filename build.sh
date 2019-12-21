@@ -1,4 +1,5 @@
-set -x
+
+set -exo pipefail
 
 sass --style compressed \
      ./src/style/_.scss:./dist/lnh.cnblogs.css \
