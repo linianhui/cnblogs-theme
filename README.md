@@ -1,33 +1,16 @@
-# 1. Cnblogs Theme
-Theme for http://linianhui.cnblogs.com .
+# 1. 用途
+Theme for <http://linianhui.cnblogs.com> .
 
-# 2. 安装编译工具
+# 2. 原理
 
-使用`sass`https://github.com/sass 进行编译。
+本项目会编译出3个文件 :
+1. `lnh.cnblogs.js` : 一些自定义的js脚本。
+2. `lnh.cnblogs.css` : PC端样式文件。
+3. `lnh.cnblogs.mobile.css` : 为移动端适配优化的样式文件。
 
-1. ruby用户 : `gem install sass`
-2. node用户 : `npm install -g sass`
-3. docker用户 : `docker pull lnhcode/sass:1.23.7`(https://hub.docker.com/r/lnhcode/sass)
+把这三个文件添加到博客的配置中即可。
 
-# 3. 热更新（结合Chrome调试用）
-
-1. pwsh : [watch.ps1](/watch.ps1)
-2. bash : [watch.sh](/watch.sh)
-
-# 4. 编译 
-
-1. pwsh : [build.ps1](/build.ps1)
-2. bash : [build.sh](/build.sh)
-3. docker : 
-    ```sh
-    docker run --rm \
-               --volume $(pwd):/build \
-               --workdir /build \
-               lnhcode/sass:1.23.7 \
-               sh build.sh 
-    ```
-
-# 博客设置
+## 2.1 博客设置
 
 主题 : `LessIsMore`
 
@@ -39,7 +22,32 @@ Theme for http://linianhui.cnblogs.com .
 ```
 
 页脚代码
-
 ```html
 <script type="text/javascript" src="//files.cnblogs.com/files/linianhui/lnh.cnblogs.js"></script>
 ```
+
+# 3. 自定义
+
+本项目使用`sass`https://github.com/sass 进行编译。
+
+1. ruby用户 : `gem install sass`
+2. node用户 : `npm install -g sass`
+3. docker用户 : `docker pull lnhcode/sass:1.23.7`(https://hub.docker.com/r/lnhcode/sass)
+
+热更新（结合Chrome调试用）
+
+1. pwsh : [watch.ps1](/watch.ps1)
+2. bash : [watch.sh](/watch.sh)
+
+编译 
+
+1. pwsh : [build.ps1](/build.ps1)
+2. bash : [build.sh](/build.sh)
+3. docker : 
+    ```sh
+    docker run --rm \
+               --volume $(pwd):/build \
+               --workdir /build \
+               lnhcode/sass:1.23.7 \
+               sh build.sh 
+    ```
