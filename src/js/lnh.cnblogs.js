@@ -4,7 +4,6 @@
 
     var element = {
         body: document.body,
-        postTitle: "cb_post_title_url",
         postBody: "cnblogs_post_body",
         postCategory: "BlogPostCategory",
         postTagList: "EntryTag",
@@ -23,7 +22,7 @@
         fixedBar.push('<div class="fixed-bar">');
 
         if ($id(element.postBody).length) {
-            fixedBar.push('<a class="item toc" href="javascript:lnh.toc.toggle();" title="目录"><i class="fa fa-hashtag"></i></a>');
+            fixedBar.push('<a class="item toc" href="javascript:lnh.toc.toggle();" title="目录"><i class="fa fa-bars"></i></a>');
             fixedBar.push('<a class="item comments" href="#comment_form_container" title="评论列表"><i class="fa fa-comments"></i></a>');
             fixedBar.push('<a class="item comment" href="#comment_form" title="写评论"><i class="fa fa-pencil"></i></a>');
         }
@@ -68,10 +67,6 @@
         }
     }
 
-    function getPostTitleCore() {
-        return $id(element.postTitle).text();
-    }
-
     function getPostBodyHeaderListCore() {
         var headerList = [];
 
@@ -103,7 +98,7 @@
 
         if (headerList.length) {
             tableOfContentsHtml.push('<div id="' + element.toc + '" class="lnh_toc_warp">');
-            tableOfContentsHtml.push('<div class="title"># ' + getPostTitleCore() + '</div>');
+            tableOfContentsHtml.push('<div class="title">目录</div>');
             tableOfContentsHtml.push('<div class="toc">');
             for (var i = 0; i < headerList.length; i++) {
                 var header = headerList[i];
