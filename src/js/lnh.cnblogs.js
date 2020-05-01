@@ -33,7 +33,7 @@
         toolBar.push('<div id="lnh-toolbar" class="lnh-toolbar">');
         if ($id(element.postBody).length) {
             toolBar.push('<a class="fa fa-bars" href="javascript:lnh.toggleToc();" title="目录"></a>');
-            toolBar.push('<a class="fa fa-comments" href="#comment_form_container" title="评论列表"></a>');
+            toolBar.push('<a class="fa fa-comments" href="#blog-comments-placeholder" title="评论列表"></a>');
             toolBar.push('<a class="fa fa-pencil" href="#comment_form" title="写评论"></a>');
         }
 
