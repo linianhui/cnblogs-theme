@@ -1,0 +1,55 @@
+.lnh-toc {
+    position: fixed;
+    display: inline-block;
+    visibility: hidden;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 9999;
+    overflow-y: auto;
+    overflow-x: auto;
+    box-shadow: 0 0 4px #ccc;
+    font-size: 14px;
+    max-width: 360px;
+    padding-top: 16px;
+    background-color: #fff;
+    box-sizing: border-box;
+    padding: 8px 8px 0 8px;
+
+    &.opened{
+        visibility: visible;
+    }
+
+    .items {
+        position: relative;
+        margin-top: 8px;
+        display: block;
+    }
+    .item {
+        display: block;
+        font-size: 12px;
+        white-space: nowrap;
+        padding-left: 8px;
+    }
+    .item-h1 {
+        line-height: 2;
+        font-size: 16px;
+    }
+    .item-h2 {
+        margin-left: 16px;
+        line-height: 1.8;
+        font-size: 15px;
+    }
+    .item-h3 {
+        margin-left: 24px;
+        font-size: 14px;
+    }
+    .item-h4 {
+        margin-left: 32px;
+        font-size: 13px;
+    }
+    .item.selected {
+        background-color: #0681ba !important;
+        color: #fff !important;
+    }
+}

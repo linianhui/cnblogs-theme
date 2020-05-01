@@ -1,0 +1,14 @@
+.lnh-toolbar {
+    position: fixed;
+    display: inline-block;
+    right: 20px;
+    bottom: 20px;
+    z-index: 8888;
+    font-size: 24px;
+    box-sizing: border-box;
+    background-color: #fff;
+    a{
+        display: block;
+        margin-top: 20px;
+    }
+}

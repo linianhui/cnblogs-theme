@@ -1,5 +1,9 @@
+body{
+    margin-left: 0 !important;
+}
+
 #home{
-    margin: 20px;
+    margin: 18px 18px 54px 18px;
     overflow-x: hidden;
 }
 
@@ -26,4 +30,23 @@
 
 .buryit{
     float: right;
+}
+
+.lnh-toc{
+    top: unset;
+    left: 0;
+    bottom: 44px;
+}
+
+.lnh-toolbar{
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 0 4px #ccc;
+    a{
+        display: inline-block;
+        margin: 10px 18px;
+   }
 }
