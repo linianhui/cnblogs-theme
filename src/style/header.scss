@@ -19,21 +19,17 @@
     text-align: right;
     #navList {
         position: relative;
-        display: inline-block
+        display: inline-block;
+        font-size: 0;
     }
     #navList li {
-        display: inline-block
-    }
-    .menu {
-        display: block;
-        width: 5em;
-        font-size: 16px;
-        padding: 6px 0;
-        text-align: center;
-    }
-    .menu:hover {
-        color: #fff;
-        background-color: #0681ba;
+        display: inline-block;
+
+        a{
+            font-size: 18px;
+            display: inline-block;
+            margin: 4px 0 4px 1em;
+        }
     }
 }
 

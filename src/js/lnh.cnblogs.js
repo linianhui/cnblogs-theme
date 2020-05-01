@@ -99,7 +99,6 @@
 
         if (tocItemArray.length) {
             tocHtml.push('<div id="' + element.toc + '" class="lnh-toc">');
-            tocHtml.push('<div class="title">目录</div>');
             tocHtml.push('<div class="items">');
             for (var i = 0; i < tocItemArray.length; i++) {
                 var tocItem = tocItemArray[i];

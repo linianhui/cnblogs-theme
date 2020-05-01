@@ -43,27 +43,7 @@
 }
 
 .pager {
-    display: inline-block;
-    background-color: #0681ba;
     font-size: 16px;
-    margin-top: 12px;
-    padding: 6px;
-    margin-bottom: -1px
-}
-
-.pager .current {
-    padding: 6px;
-    margin-right: 6px
-}
-
-.pager a {
-    color: #FFF;
-    padding: 6px;
-    margin-right: 6px
-}
-
-.pager a:hover {
-    background-color: #07628d
 }
 
 .feedback_area_title {
@@ -72,7 +52,8 @@
     font-weight: 700;
     padding: 6px 12px;
     display: inline-block;
-    background-color: #0681ba
+    background-color: #0681ba;
+    margin-top: 16px;
 }
 
 .feedbackItem {

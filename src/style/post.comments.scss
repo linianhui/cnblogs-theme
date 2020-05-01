@@ -1,3 +1,7 @@
+.comment_textarea{
+    width: 100%;
+}
+
 #commentform_title {
     color: #fff;
     font-size: 20px;
@@ -20,13 +24,11 @@
 
 .commentbox_title_left {
     position: relative;
-    float: unset;
     display: inline-block;
 }
 
 .commentbox_title_right {
     position: relative;
-    float: unset;
     display: inline-block;
     .comment_icon {
         display: inline-block;
@@ -38,14 +40,4 @@
     width: 100%;
     height: 160px;
     box-sizing: border-box;
-}
-
-#btn_comment_submit {
-    background-color: #0681ba;
-    color: #fff;
-    cursor: pointer;
-    font-size: 18px;
-    padding: 8px;
-    width: unset;
-    height: unset;
 }
