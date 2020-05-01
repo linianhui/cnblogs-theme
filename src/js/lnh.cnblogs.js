@@ -73,9 +73,9 @@
     }
 
     function setAutoId() {
-        $id(element.postBody).find(":header").each(function (index, header) {
-            if (!header.id) {
-                header.id = "auto-id-" + index;
+        $id(element.postBody).find(":header").each(function (index, h) {
+            if (!h.id) {
+                h.id = "auto-id-" + index;
             }
         });
     }
@@ -132,11 +132,6 @@
         $(element.body).append(tocHtml);
     }
 
-    function toggleToc() {
-        $id(element.toc).toggleClass('opened');
-        resetBodyStyle();
-    }
-
     function resetBodyStyle() {
         var $body = $(element.body);
         var $toc = $id(element.toc);
@@ -148,6 +143,11 @@
         }
     }
 
+    function toggleToc() {
+        $id(element.toc).toggleClass('opened');
+        resetBodyStyle();
+    }
+
     function selectedTocItem(tocItem) {
         var $selected = $("#toc-" + tocItem.anchor.attr("id"));
         if (!$selected.hasClass("selected")) {
@@ -156,7 +156,7 @@
         }
     }
 
-    function watchWindowScrollCore(tocItemArray) {
+    function selectedToc(tocItemArray) {
         var scrollTop = $(window).scrollTop() + 80;
         for (var i = 0; i < tocItemArray.length; i++) {
             var current = tocItemArray[i];
@@ -171,6 +171,37 @@
         }
     }
 
+    function watchWindowScroll() {
+        var tocItemArray = getTocItemArray();
+        $(window).scroll(function () {
+            selectedToc(tocItemArray);
+        });
+    }
+
+    function run() {
+        var functionList = Array.prototype.slice.apply(arguments);
+
+        var intervalCoreHandler = setInterval(intervalCore, 500);
+
+        function intervalCore() {
+            var length = functionList.length;
+            for (var i = 0; i < length; i++) {
+                var functionHandler = functionList[i];
+                if (functionHandler) {
+                    var result = functionHandler();
+                    if (result) {
+                        functionList.splice(i, 1);
+                        i--;
+                        length--;
+                    }
+                }
+            }
+            if (functionList.length === 0) {
+                clearInterval(intervalCoreHandler);
+            }
+        };
+    }
+
     window.lnh = {
         isMobile: isMobile,
         isPC: isPC,
@@ -181,35 +212,8 @@
         moveDigg: moveDigg,
         copyCategoryAndTag: copyCategoryAndTag,
         setAutoId: setAutoId,
-        watchWindowScroll: function () {
-            var tocItemArray = getTocItemArray();
-            $(window).scroll(function () {
-                watchWindowScrollCore(tocItemArray);
-            });
-        },
-        run: function () {
-            var functionList = Array.prototype.slice.apply(arguments);
-
-            var intervalCoreHandler = setInterval(intervalCore, 500);
-
-            function intervalCore() {
-                var length = functionList.length;
-                for (var i = 0; i < length; i++) {
-                    var functionHandler = functionList[i];
-                    if (functionHandler) {
-                        var result = functionHandler();
-                        if (result) {
-                            functionList.splice(i, 1);
-                            i--;
-                            length--;
-                        }
-                    }
-                }
-                if (functionList.length === 0) {
-                    clearInterval(intervalCoreHandler);
-                }
-            };
-        }
+        watchWindowScroll: watchWindowScroll,
+        run: run
     };
 
 })(window, document, navigator);
