@@ -32,12 +32,12 @@
         var toolBar = [];
         toolBar.push('<div id="lnh-toolbar" class="lnh-toolbar">');
         if ($id(element.postBody).length) {
-            toolBar.push('<a class="fa fa-bars" href="javascript:lnh.toggleToc();" title="目录"></a>');
+            toolBar.push('<a class="fa fa-list" href="javascript:lnh.toggleToc();" title="目录"></a>');
             toolBar.push('<a class="fa fa-comments" href="#blog-comments-placeholder" title="评论列表"></a>');
-            toolBar.push('<a class="fa fa-pencil" href="#comment_form" title="写评论"></a>');
+            toolBar.push('<a class="fa fa-comment" href="#comment_form" title="写评论"></a>');
         }
 
-        toolBar.push('<a class="fa fa-arrow-circle-up" href="javascript:scroll(0,0);" title="返回顶部"></a>');
+        toolBar.push('<a class="fa fa-arrow-up" href="javascript:scroll(0,0);" title="返回顶部"></a>');
         toolBar.push('</div>');
 
         var toolBarHtml = toolBar.join('');
