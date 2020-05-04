@@ -171,10 +171,31 @@
         }
     }
 
+    function appendHorizontalProgressToBody(){
+        $(element.body).append('<div id="horizontal-progress" class="horizontal-progress"></div>');
+    }
+
+    function horizontalProgressOnScroll() {
+        var progress = (document.documentElement.clientHeight + window.scrollY)
+            / document.body.offsetHeight
+            * 100;
+
+        if (progress < 0) {
+            progress = 0;
+        }
+
+        if (progress > 100) {
+            progress = 100;
+        }
+
+        $id("horizontal-progress").css('width', progress + '%');
+    }
+
     function watchWindowScroll() {
         var tocItemArray = getTocItemArray();
         $(window).scroll(function () {
             selectedToc(tocItemArray);
+            horizontalProgressOnScroll();
         });
     }
 
@@ -208,6 +229,7 @@
         addMobileCss: addMobileCss,
         appendTocToBody: appendTocToBody,
         appendToolBarToBody: appendToolBarToBody,
+        appendHorizontalProgressToBody: appendHorizontalProgressToBody,
         toggleToc: toggleToc,
         moveDigg: moveDigg,
         copyCategoryAndTag: copyCategoryAndTag,
@@ -221,6 +243,7 @@
 lnh.setAutoId();
 lnh.appendTocToBody();
 lnh.appendToolBarToBody();
+lnh.appendHorizontalProgressToBody();
 lnh.watchWindowScroll();
 
 if (lnh.isMobile()) {

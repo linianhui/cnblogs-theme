@@ -1,0 +1,10 @@
+.horizontal-progress{
+    position: fixed;
+    display: inline-block;
+    left: 0;
+    top: 0;
+    height: 2px;
+    width: 0;
+    z-index: 9999;
+    background-color: #0681ba;
+}
