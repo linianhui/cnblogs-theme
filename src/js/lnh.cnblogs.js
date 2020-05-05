@@ -24,7 +24,7 @@
         return $('#' + id);
     }
 
-    function addMobileCss(href) {
+    function addMobileCssUrl(href) {
         $id('home').before('<link href="' + href + '" rel="stylesheet">');
     };
 
@@ -45,7 +45,7 @@
         $(element.body).append(toolBarHtml)
     }
 
-    function moveDigg() {
+    function moveDiggToSideBar() {
         var $sideBar = $id(element.sideBar);
         if ($sideBar.find(element.digg).length) {
             return true;
@@ -58,7 +58,7 @@
         }
     }
 
-    function copyCategoryAndTag() {
+    function copyCategoryAndTagUnderBlogTitle() {
         var categotyHtml = $id(element.postCategory).html();
         var entryTagListHtml = $id(element.postTagList).html();
 
@@ -72,7 +72,7 @@
         }
     }
 
-    function setAutoId() {
+    function trySetBlogHeaderId() {
         $id(element.postBody).find(":header").each(function (index, h) {
             if (!h.id) {
                 h.id = "auto-id-" + index;
@@ -132,7 +132,7 @@
         $(element.body).append(tocHtml);
     }
 
-    function resetBodyStyle() {
+    function refreshBodyStyle() {
         var $body = $(element.body);
         var $toc = $id(element.toc);
         if ($toc.hasClass('opened')) {
@@ -145,10 +145,11 @@
 
     function toggleToc() {
         $id(element.toc).toggleClass('opened');
-        resetBodyStyle();
+        refreshBodyStyle();
+        refreshHorizontalProgressStyle();
     }
 
-    function selectedTocItem(tocItem) {
+    function refreshSelectedTocItemStyle(tocItem) {
         var $selected = $("#toc-" + tocItem.anchor.attr("id"));
         if (!$selected.hasClass("selected")) {
             $id(element.toc).find(".item").removeClass("selected");
@@ -156,7 +157,7 @@
         }
     }
 
-    function selectedToc(tocItemArray) {
+    function refreshSelectedTocStyle(tocItemArray) {
         var scrollTop = $(window).scrollTop() + 80;
         for (var i = 0; i < tocItemArray.length; i++) {
             var current = tocItemArray[i];
@@ -165,17 +166,17 @@
                 if (next && (scrollTop >= next.anchor.offset().top)) {
                     continue;
                 }
-                selectedTocItem(current);
+                refreshSelectedTocItemStyle(current);
                 break;
             }
         }
     }
 
-    function appendHorizontalProgressToBody(){
+    function appendHorizontalProgressToBody() {
         $(element.body).append('<div id="horizontal-progress" class="horizontal-progress"></div>');
     }
 
-    function horizontalProgressOnScroll() {
+    function refreshHorizontalProgressStyle() {
         var progress = (document.documentElement.clientHeight + window.scrollY)
             / document.body.offsetHeight
             * 100;
@@ -191,12 +192,13 @@
         $id("horizontal-progress").css('width', progress + '%');
     }
 
-    function watchWindowScroll() {
+    function addOnScorllEvent() {
         var tocItemArray = getTocItemArray();
         $(window).scroll(function () {
-            selectedToc(tocItemArray);
-            horizontalProgressOnScroll();
+            refreshSelectedTocStyle(tocItemArray);
+            refreshHorizontalProgressStyle();
         });
+        refreshHorizontalProgressStyle();
     }
 
     function run() {
@@ -226,30 +228,30 @@
     window.lnh = {
         isMobile: isMobile,
         isPC: isPC,
-        addMobileCss: addMobileCss,
+        addMobileCssUrl: addMobileCssUrl,
         appendTocToBody: appendTocToBody,
         appendToolBarToBody: appendToolBarToBody,
         appendHorizontalProgressToBody: appendHorizontalProgressToBody,
         toggleToc: toggleToc,
-        moveDigg: moveDigg,
-        copyCategoryAndTag: copyCategoryAndTag,
-        setAutoId: setAutoId,
-        watchWindowScroll: watchWindowScroll,
+        moveDiggToSideBar: moveDiggToSideBar,
+        copyCategoryAndTagUnderBlogTitle: copyCategoryAndTagUnderBlogTitle,
+        trySetBlogHeaderId: trySetBlogHeaderId,
+        addOnScorllEvent: addOnScorllEvent,
         run: run
     };
 
 })(window, document, navigator);
 
-lnh.setAutoId();
+lnh.trySetBlogHeaderId();
+lnh.appendHorizontalProgressToBody();
 lnh.appendTocToBody();
 lnh.appendToolBarToBody();
-lnh.appendHorizontalProgressToBody();
-lnh.watchWindowScroll();
+lnh.addOnScorllEvent();
 
 if (lnh.isMobile()) {
-    lnh.addMobileCss('//files.cnblogs.com/files/linianhui/lnh.cnblogs.mobile.css');
-    lnh.run(lnh.copyCategoryAndTag);
+    lnh.addMobileCssUrl('//files.cnblogs.com/files/linianhui/lnh.cnblogs.mobile.css');
+    lnh.run(lnh.copyCategoryAndTagUnderBlogTitle);
 } else {
     lnh.toggleToc();
-    lnh.run(lnh.moveDigg, lnh.copyCategoryAndTag);
+    lnh.run(lnh.moveDiggToSideBar, lnh.copyCategoryAndTagUnderBlogTitle);
 }
