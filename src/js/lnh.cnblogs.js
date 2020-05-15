@@ -10,6 +10,7 @@
         toc: "lnh-toc",
         digg: "div_digg",
         sideBar: "sideBar",
+        postDesc: "#topics .postDesc"
     };
 
     function isMobile() {
@@ -58,12 +59,14 @@
         }
     }
 
-    function copyCategoryAndTagUnderBlogTitle() {
+    function copyPostInfoUnderBlogTitle() {
+        var postDescHtml = $(element.postDesc).html();
         var categotyHtml = $id(element.postCategory).html();
         var entryTagListHtml = $id(element.postTagList).html();
-
-        if (categotyHtml) {
-            var html = '<div class="lnh-post-categoty-tags">'
+        
+        if (postDescHtml) {
+            var html = '<div class="lnh-post-info">'
+                + '<div class="post-desc">' + postDescHtml + '</div>'
                 + '<div class="post-categoty">' + categotyHtml + '</div>'
                 + '<div class="post-tags">' + entryTagListHtml + '</div>'
                 + '</div>';
@@ -234,7 +237,7 @@
         appendHorizontalProgressToBody: appendHorizontalProgressToBody,
         toggleToc: toggleToc,
         moveDiggToSideBar: moveDiggToSideBar,
-        copyCategoryAndTagUnderBlogTitle: copyCategoryAndTagUnderBlogTitle,
+        copyPostInfoUnderBlogTitle: copyPostInfoUnderBlogTitle,
         trySetBlogHeaderId: trySetBlogHeaderId,
         addOnScorllEvent: addOnScorllEvent,
         run: run
@@ -250,8 +253,8 @@ lnh.addOnScorllEvent();
 
 if (lnh.isMobile()) {
     lnh.addMobileCssUrl('//files.cnblogs.com/files/linianhui/lnh.cnblogs.mobile.css');
-    lnh.run(lnh.copyCategoryAndTagUnderBlogTitle);
+    lnh.run(lnh.copyPostInfoUnderBlogTitle);
 } else {
     lnh.toggleToc();
-    lnh.run(lnh.moveDiggToSideBar, lnh.copyCategoryAndTagUnderBlogTitle);
+    lnh.run(lnh.moveDiggToSideBar, lnh.copyPostInfoUnderBlogTitle);
 }
