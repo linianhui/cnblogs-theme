@@ -89,14 +89,18 @@
         }
     }
 
-    function trySetBlogHeaderId() {
-        $(selectors.postBody).find(":header").each(function (index, h) {
-            if (!h.id) {
-                h.id = "auto-id-" + index;
-            }
-        });
+    function foreachArticleHeader(action) {
+        $(selectors.postBody).find(":header").each(action);
     }
 
+    function appendArticleHeaderLocatorElement() {
+        foreachArticleHeader(function (index, header) {
+            if (!header.id) {
+                header.id = "auto-id-" + index;
+            }
+            $(header).prepend('<i id="locator-' + header.id + '" class="lnh-article-header-locator"></i>');
+        });
+    }
 
     function getTocItemArray() {
         var tocItemArray = [];
@@ -246,14 +250,14 @@
         toggleToc: toggleToc,
         moveDiggToSideBar: moveDiggToSideBar,
         copyPostInfoUnderBlogTitle: copyPostInfoUnderBlogTitle,
-        trySetBlogHeaderId: trySetBlogHeaderId,
+        appendArticleHeaderLocatorElement: appendArticleHeaderLocatorElement,
         addOnScorllEvent: addOnScorllEvent,
         run: run
     };
 
 })(window, document, navigator);
 
-lnh.trySetBlogHeaderId();
+lnh.appendArticleHeaderLocatorElement();
 lnh.appendHorizontalProgressToBody();
 lnh.appendTocToBody();
 lnh.appendToolBarToBody();

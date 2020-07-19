@@ -72,4 +72,12 @@
         border-collapse: collapse;
         padding: 2px;
     }
+
+    .lnh-article-header-locator{
+        position: fixed;
+        display: inline-block;
+        width: 0;
+        height: 0;
+        font-size: 0;
+    }
 }
