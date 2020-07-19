@@ -23,6 +23,22 @@
         return !isMobile();
     }
 
+    function getViewportY1() {
+        return window.scrollY;
+    }
+
+    function getViewportHeight() {
+        return document.documentElement.clientHeight;
+    }
+
+    function getWindowHeight() {
+        return document.body.offsetHeight;
+    }
+
+    function getWindowWidth() {
+        return document.body.offsetWidth;
+    }
+
     function addMobileCssUrl(href) {
         $(selectors.home).before('<link href="' + href + '" rel="stylesheet">');
     };
@@ -178,19 +194,13 @@
     }
 
     function refreshHorizontalProgressStyle() {
-        var progress = (document.documentElement.clientHeight + window.scrollY)
-            / document.body.offsetHeight
-            * 100;
-
-        if (progress < 0) {
-            progress = 0;
-        }
-
-        if (progress > 100) {
-            progress = 100;
-        }
-
-        $(selectors.horizontalProgress).css('width', progress + '%');
+        var viewportY1 = getViewportY1();
+        var viewportHeight = getViewportHeight();
+        var viewportY2 = viewportY1 + viewportHeight;
+        var windowHeight = getWindowHeight();
+        var windowWidth = getWindowWidth();
+        var progress = Math.min(1, Math.max(0, viewportY2 / windowHeight));
+        $(selectors.horizontalProgress).css('width', (progress * windowWidth) + 'px');
     }
 
     function addOnScorllEvent() {
