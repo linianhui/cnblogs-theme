@@ -107,8 +107,8 @@
 
         foreachArticleHeader(function (index, header) {
             tocItemArray.push({
-                a: $('#toc-' + header.id),
-                locator: $('#locator-' + header.id),
+                a: document.getElementById('toc-' + header.id),
+                locator: document.getElementById('locator-' + header.id),
             });
         });
 
@@ -191,20 +191,20 @@
     }
 
     function inViewport(currentTocItem, nextTocItem, viewportY1, viewportY2) {
-        var currentElementY1 = currentTocItem.locator.offset().top;
+        var currentElementY1 = currentTocItem.locator.offsetTop;
         if (currentElementY1 > viewportY2) {
             return false;
         }
-        var nextElementY1 = (nextTocItem && nextTocItem.locator.offset().top) || viewportY2;
+        var nextElementY1 = (nextTocItem && nextTocItem.locator.offsetTop) || viewportY2;
         return Math.max(currentElementY1, viewportY1) < Math.min(nextElementY1, viewportY2);
     }
 
     function refreshSelectedTocItemArrayStyle(tocItemArray, selectedTocItemArray) {
         tocItemArray.forEach(function (tocItem) {
-            tocItem.a.removeClass('selected');
+            $(tocItem.a).removeClass('selected');
         });
         selectedTocItemArray.forEach(function (selectedTocItem) {
-            selectedTocItem.a.addClass('selected');
+            $(selectedTocItem.a).addClass('selected');
         });
     }
 
