@@ -23,22 +23,22 @@
         return !isMobile();
     }
 
-    function getViewportY1() {
-        return window.scrollY;
+    function getViewportYAxis() {
+        var viewportY1 = window.scrollY;
+        var viewportHeight = document.documentElement.clientHeight;
+        var viewportY2 = viewportY1 + viewportHeight;
+        return {
+            y1: viewportY1,
+            y2: viewportY2
+        };
     }
 
-    function getViewportHeight() {
-        return document.documentElement.clientHeight;
+    function getWindowSize() {
+        return {
+            width: document.body.offsetWidth,
+            height: document.body.offsetHeight,
+        };
     }
-
-    function getWindowHeight() {
-        return document.body.offsetHeight;
-    }
-
-    function getWindowWidth() {
-        return document.body.offsetWidth;
-    }
-
     function addMobileCssUrl(href) {
         $(selectors.home).before('<link href="' + href + '" rel="stylesheet">');
     };
@@ -176,13 +176,16 @@
 
     function refreshSelectedTocStyle(tocItemArray) {
         var selectedTocItemArray = [];
-        var viewportY1 = getViewportY1();
-        var viewportHeight = getViewportHeight();
-        var viewportY2 = viewportY1 + viewportHeight;
+        var viewportYAxis = getViewportYAxis();
+
         for (var i = 0; i < tocItemArray.length; i++) {
             var current = tocItemArray[i];
             var next = tocItemArray[i + 1];
-            if (inViewport(current, next, viewportY1, viewportY2)) {
+            var locatorYAxis = {
+                y1: current.locator.offsetTop,
+                y2: (next && next.locator.offsetTop) || viewportYAxis.y2
+            };
+            if (inViewport(locatorYAxis, viewportYAxis)) {
                 selectedTocItemArray.push(current);
             }
         }
@@ -190,13 +193,11 @@
         refreshSelectedTocItemArrayStyle(tocItemArray, selectedTocItemArray);
     }
 
-    function inViewport(currentTocItem, nextTocItem, viewportY1, viewportY2) {
-        var currentElementY1 = currentTocItem.locator.offsetTop;
-        if (currentElementY1 > viewportY2) {
+    function inViewport(locatorYAxis, viewportYAxis) {
+        if (locatorYAxis.y1 > viewportYAxis.y2) {
             return false;
         }
-        var nextElementY1 = (nextTocItem && nextTocItem.locator.offsetTop) || viewportY2;
-        return Math.max(currentElementY1, viewportY1) < Math.min(nextElementY1, viewportY2);
+        return Math.max(locatorYAxis.y1, viewportYAxis.y1) < Math.min(locatorYAxis.y2, viewportYAxis.y2);
     }
 
     function refreshSelectedTocItemArrayStyle(tocItemArray, selectedTocItemArray) {
@@ -213,13 +214,10 @@
     }
 
     function refreshHorizontalProgressStyle() {
-        var viewportY1 = getViewportY1();
-        var viewportHeight = getViewportHeight();
-        var viewportY2 = viewportY1 + viewportHeight;
-        var windowHeight = getWindowHeight();
-        var windowWidth = getWindowWidth();
-        var progress = Math.min(1, Math.max(0, viewportY2 / windowHeight));
-        $(selectors.horizontalProgress).css('width', (progress * windowWidth) + 'px');
+        var viewportYAxis = getViewportYAxis();
+        var windowSize = getWindowSize();
+        var percentage = Math.min(1, Math.max(0, viewportYAxis.y2 / windowSize.height));
+        $(selectors.horizontalProgress).css('width', (percentage * window.width) + 'px');
     }
 
     function addOnScorllEvent() {
