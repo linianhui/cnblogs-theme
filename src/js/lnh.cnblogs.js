@@ -2,14 +2,16 @@
 
 (function (window, document, navigator) {
 
-    var element = {
+    var selectors = {
         body: document.body,
-        postBody: "cnblogs_post_body",
-        postCategory: "BlogPostCategory",
-        postTagList: "EntryTag",
-        toc: "lnh-toc",
-        digg: "div_digg",
-        sideBar: "sideBar",
+        home: "#home",
+        horizontalProgress: '#horizontal-progress',
+        postBody: "#cnblogs_post_body",
+        postCategory: "#BlogPostCategory",
+        postTagList: "#EntryTag",
+        toc: "#lnh-toc",
+        digg: "#div_digg",
+        sideBar: "#sideBar",
         postDesc: "#topics .postDesc"
     };
 
@@ -21,18 +23,14 @@
         return !isMobile();
     }
 
-    function $id(id) {
-        return $('#' + id);
-    }
-
     function addMobileCssUrl(href) {
-        $id('home').before('<link href="' + href + '" rel="stylesheet">');
+        $(selectors.home).before('<link href="' + href + '" rel="stylesheet">');
     };
 
     function appendToolBarToBody() {
         var toolBar = [];
         toolBar.push('<div id="lnh-toolbar" class="lnh-toolbar">');
-        if ($id(element.postBody).length) {
+        if ($(selectors.postBody).length) {
             toolBar.push('<a class="fa fa-list" href="javascript:lnh.toggleToc();" title="目录"></a>');
             toolBar.push('<a class="fa fa-comments" href="#blog-comments-placeholder" title="评论列表"></a>');
             toolBar.push('<a class="fa fa-comment" href="#comment_form" title="写评论"></a>');
@@ -43,16 +41,16 @@
 
         var toolBarHtml = toolBar.join('');
 
-        $(element.body).append(toolBarHtml)
+        $(selectors.body).append(toolBarHtml)
     }
 
     function moveDiggToSideBar() {
-        var $sideBar = $id(element.sideBar);
-        if ($sideBar.find(element.digg).length) {
+        var $sideBar = $(selectors.sideBar);
+        if ($sideBar.find(selectors.digg).length) {
             return true;
         }
 
-        var $digg = $id(element.digg);
+        var $digg = $(selectors.digg);
         if ($digg.length) {
             $sideBar.append($digg);
             return true;
@@ -60,10 +58,10 @@
     }
 
     function copyPostInfoUnderBlogTitle() {
-        var postDescHtml = $(element.postDesc).html();
-        var categotyHtml = $id(element.postCategory).html();
-        var entryTagListHtml = $id(element.postTagList).html();
-        
+        var postDescHtml = $(selectors.postDesc).html();
+        var categotyHtml = $(selectors.postCategory).html();
+        var entryTagListHtml = $(selectors.postTagList).html();
+
         if (postDescHtml) {
             var html = '<div class="lnh-post-info">'
                 + '<div class="post-desc">' + postDescHtml + '</div>'
@@ -76,7 +74,7 @@
     }
 
     function trySetBlogHeaderId() {
-        $id(element.postBody).find(":header").each(function (index, h) {
+        $(selectors.postBody).find(":header").each(function (index, h) {
             if (!h.id) {
                 h.id = "auto-id-" + index;
             }
@@ -87,7 +85,7 @@
     function getTocItemArray() {
         var tocItemArray = [];
 
-        $id(element.postBody).find(":header").each(function (index, header) {
+        $(selectors.postBody).find(":header").each(function (index, header) {
             var $header = $(header);
             tocItemArray.push({
                 anchor: $header
@@ -101,7 +99,7 @@
         var tocHtml = [];
 
         if (tocItemArray.length) {
-            tocHtml.push('<div id="' + element.toc + '" class="lnh-toc">');
+            tocHtml.push('<div id="lnh-toc" class="lnh-toc">');
             tocHtml.push('<div class="items">');
             for (var i = 0; i < tocItemArray.length; i++) {
                 var tocItem = tocItemArray[i];
@@ -127,17 +125,17 @@
     }
 
     function appendTocToBody() {
-        if ($id(element.toc).length) {
+        if ($(selectors.toc).length) {
             return;
         }
         var tocItemArray = getTocItemArray();
         var tocHtml = buildTocHtml(tocItemArray);
-        $(element.body).append(tocHtml);
+        $(selectors.body).append(tocHtml);
     }
 
     function refreshBodyStyle() {
-        var $body = $(element.body);
-        var $toc = $id(element.toc);
+        var $body = $(selectors.body);
+        var $toc = $(selectors.toc);
         if ($toc.hasClass('opened')) {
             var tocWidth = $toc.outerWidth();
             $body.css("margin-left", tocWidth + 'px');
@@ -147,7 +145,7 @@
     }
 
     function toggleToc() {
-        $id(element.toc).toggleClass('opened');
+        $(selectors.toc).toggleClass('opened');
         refreshBodyStyle();
         refreshHorizontalProgressStyle();
     }
@@ -155,7 +153,7 @@
     function refreshSelectedTocItemStyle(tocItem) {
         var $selected = $("#toc-" + tocItem.anchor.attr("id"));
         if (!$selected.hasClass("selected")) {
-            $id(element.toc).find(".item").removeClass("selected");
+            $(selectors.toc).find(".item").removeClass("selected");
             $selected.addClass("selected");
         }
     }
@@ -176,7 +174,7 @@
     }
 
     function appendHorizontalProgressToBody() {
-        $(element.body).append('<div id="horizontal-progress" class="horizontal-progress"></div>');
+        $(selectors.body).append('<div id="horizontal-progress" class="horizontal-progress"></div>');
     }
 
     function refreshHorizontalProgressStyle() {
@@ -192,7 +190,7 @@
             progress = 100;
         }
 
-        $id("horizontal-progress").css('width', progress + '%');
+        $(selectors.horizontalProgress).css('width', progress + '%');
     }
 
     function addOnScorllEvent() {
