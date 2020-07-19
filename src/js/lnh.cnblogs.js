@@ -105,10 +105,10 @@
     function getTocItemArray() {
         var tocItemArray = [];
 
-        $(selectors.postBody).find(":header").each(function (index, header) {
-            var $header = $(header);
+        foreachArticleHeader(function (index, header) {
             tocItemArray.push({
-                anchor: $header
+                a: $('#toc-' + header.id),
+                locator: $('#locator-' + header.id),
             });
         });
 
@@ -174,27 +174,38 @@
         refreshHorizontalProgressStyle();
     }
 
-    function refreshSelectedTocItemStyle(tocItem) {
-        var $selected = $("#toc-" + tocItem.anchor.attr("id"));
-        if (!$selected.hasClass("selected")) {
-            $(selectors.toc).find(".item").removeClass("selected");
-            $selected.addClass("selected");
-        }
-    }
-
     function refreshSelectedTocStyle(tocItemArray) {
-        var scrollTop = $(window).scrollTop() + 80;
+        var selectedTocItemArray = [];
+        var viewportY1 = getViewportY1();
+        var viewportHeight = getViewportHeight();
+        var viewportY2 = viewportY1 + viewportHeight;
         for (var i = 0; i < tocItemArray.length; i++) {
             var current = tocItemArray[i];
             var next = tocItemArray[i + 1];
-            if (scrollTop > current.anchor.offset().top) {
-                if (next && (scrollTop >= next.anchor.offset().top)) {
-                    continue;
-                }
-                refreshSelectedTocItemStyle(current);
-                break;
+            if (inViewport(current, next, viewportY1, viewportY2)) {
+                selectedTocItemArray.push(current);
             }
         }
+
+        refreshSelectedTocItemArrayStyle(tocItemArray, selectedTocItemArray);
+    }
+
+    function inViewport(currentTocItem, nextTocItem, viewportY1, viewportY2) {
+        var currentElementY1 = currentTocItem.locator.offset().top;
+        if (currentElementY1 > viewportY2) {
+            return false;
+        }
+        var nextElementY1 = (nextTocItem && nextTocItem.locator.offset().top) || viewportY2;
+        return Math.max(currentElementY1, viewportY1) < Math.min(nextElementY1, viewportY2);
+    }
+
+    function refreshSelectedTocItemArrayStyle(tocItemArray, selectedTocItemArray) {
+        tocItemArray.forEach(function (tocItem) {
+            tocItem.a.removeClass('selected');
+        });
+        selectedTocItemArray.forEach(function (selectedTocItem) {
+            selectedTocItem.a.addClass('selected');
+        });
     }
 
     function appendHorizontalProgressToBody() {
