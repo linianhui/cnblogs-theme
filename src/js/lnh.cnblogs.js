@@ -1,6 +1,6 @@
 ﻿"use strict";
 
-(function (window, document, navigator) {
+(function (window, document, navigator, $) {
 
     var selectors = {
         body: document.body,
@@ -217,7 +217,7 @@
         var viewportYAxis = getViewportYAxis();
         var windowSize = getWindowSize();
         var percentage = Math.min(1, Math.max(0, viewportYAxis.y2 / windowSize.height));
-        $(selectors.horizontalProgress).css('width', (percentage * window.width) + 'px');
+        $(selectors.horizontalProgress).css('width', (percentage * windowSize.width) + 'px');
     }
 
     function addOnScorllEvent() {
@@ -268,7 +268,7 @@
         run: run
     };
 
-})(window, document, navigator);
+})(window, document, navigator, $);
 
 lnh.appendHorizontalProgressToBody();
 lnh.appendArticleHeaderLocatorElement();
