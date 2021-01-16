@@ -32,10 +32,32 @@ jobs:
           draft: false
           prerelease: false
 
-      - name: upload release asset
+      - name: upload release asset - lnh.cnblogs.js
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: dist/**
+          asset_path: dist/lnh.cnblogs.js
+          asset_name: lnh.cnblogs.js
+          asset_content_type: text/javascript
+
+      - name: upload release asset - lnh.cnblogs.css
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: dist/lnh.cnblogs.css
+          asset_name: lnh.cnblogs.css
+          asset_content_type: text/css
+
+      - name: upload release asset - lnh.cnblogs.mobile.css
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: dist/lnh.cnblogs.mobile.css
+          asset_name: lnh.cnblogs.mobile.css
+          asset_content_type: text/css
