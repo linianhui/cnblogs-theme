@@ -2,10 +2,6 @@ body{
     margin-left: 0 !important;
 }
 
-#top_nav{
-    display: none !important;
-}
-
 #navigator {
     .blogStats {
         top: 40px;
@@ -63,4 +59,8 @@ body{
         display: inline-block;
         margin: 10px 18px;
    }
+}
+
+.navbar{
+    display: none !important;
 }

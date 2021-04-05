@@ -9,7 +9,10 @@
 }
 
 #home {
-    margin: 48px 64px;
+    margin-left: 64px;
+    margin-top: 32px;
+    margin-right: 64px;
+    margin-bottom: 48px;
 }
 
 #main {
@@ -39,4 +42,9 @@
     border-top: 1px solid #0681ba;
     padding-top: 10px;
     text-align: center
+}
+
+.navbar{
+    padding-left: 64px;
+    padding-right: 64px;
 }
