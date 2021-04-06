@@ -57,6 +57,13 @@
         }
     }
 
+    function inViewport(elementAxis, viewportAxis) {
+        if (elementAxis.y1 > viewportAxis.y2) {
+            return false;
+        }
+        return Math.max(elementAxis.y1, viewportAxis.y1) < Math.min(elementAxis.y2, viewportAxis.y2);
+    }
+
     function addMobileCssUrl(href) {
         $(selectors.home).before('<link href="' + href + '" rel="stylesheet">');
     };
@@ -189,7 +196,7 @@
     function toggleToc() {
         $(selectors.toc).toggleClass('opened');
         refreshBodyStyle();
-        refreshHorizontalProgressStyle();
+        refreshStyleOnHeightChange();
     }
 
     function refreshSelectedTocStyle(scrollAxis,tocItemArray) {
@@ -207,13 +214,6 @@
         }
 
         refreshSelectedTocItemArrayStyle(tocItemArray, selectedTocItemArray);
-    }
-
-    function inViewport(locatorYAxis, viewportAxis) {
-        if (locatorYAxis.y1 > viewportAxis.y2) {
-            return false;
-        }
-        return Math.max(locatorYAxis.y1, viewportAxis.y1) < Math.min(locatorYAxis.y2, viewportAxis.y2);
     }
 
     function refreshSelectedTocItemArrayStyle(tocItemArray, selectedTocItemArray) {
@@ -236,10 +236,15 @@
 
     }
 
-    function refreshToc(scrollAxis) {
+    function refreshTocSytle(scrollAxis) {
         scrollAxis = scrollAxis || getScrollAxis();
+        var viewportHeight = scrollAxis.viewport.height;
         var tocElement = $(selectors.toc)[0];
-        var top = tocElement.scrollHeight * scrollAxis.scroll.percentage.y1 - scrollAxis.viewport.height / 2;
+        var tocElementHeight = tocElement.scrollHeight;
+        if (viewportHeight >= tocElementHeight) {
+            return;
+        }
+        var top = tocElementHeight * scrollAxis.scroll.percentage.y1 - viewportHeight / 2;
         tocElement.scroll({
             top: top,
             left: 0,
@@ -247,15 +252,21 @@
         });
     }
 
+
+    function refreshStyleOnHeightChange(scrollAxis){
+        scrollAxis = scrollAxis || getScrollAxis();
+        refreshHorizontalProgressStyle(scrollAxis);
+        refreshTocSytle(scrollAxis);
+    }
+
     function addOnScorllEvent() {
         var tocItemArray = getTocItemArray();
         $(window).scroll(function () {
             var scrollAxis = getScrollAxis();
             refreshSelectedTocStyle(scrollAxis, tocItemArray);
-            refreshHorizontalProgressStyle(scrollAxis);
-            refreshToc(scrollAxis);
+            refreshStyleOnHeightChange(scrollAxis);
         });
-        refreshHorizontalProgressStyle();
+        refreshStyleOnHeightChange();
     }
 
     function run() {
