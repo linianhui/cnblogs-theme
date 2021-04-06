@@ -40,7 +40,7 @@
         };
     }
 
-    function getScollAxis() {
+    function getScrollAxis() {
         var viewport = getViewportAxis();
         var body = getBodyAxis();
         var y1ScollPercentage = Math.min(1, Math.max(0, viewport.y1 / body.height));
@@ -230,14 +230,14 @@
     }
 
     function refreshHorizontalProgressStyle(scrollAxis) {
-        scrollAxis = scrollAxis || getScollAxis();
+        scrollAxis = scrollAxis || getScrollAxis();
         var progressWidth = scrollAxis.scroll.percentage.y2 * scrollAxis.body.width;
         $(selectors.horizontalProgress).css('width', progressWidth+ 'px');
 
     }
 
     function refreshToc(scrollAxis) {
-        scrollAxis = scrollAxis || getScollAxis();
+        scrollAxis = scrollAxis || getScrollAxis();
         var tocElement = $(selectors.toc)[0];
         var top = tocElement.scrollHeight * scrollAxis.scroll.percentage.y1 - scrollAxis.viewport.height / 2;
         tocElement.scroll({
@@ -250,7 +250,7 @@
     function addOnScorllEvent() {
         var tocItemArray = getTocItemArray();
         $(window).scroll(function () {
-            var scrollAxis = getScollAxis();
+            var scrollAxis = getScrollAxis();
             refreshSelectedTocStyle(scrollAxis, tocItemArray);
             refreshHorizontalProgressStyle(scrollAxis);
             refreshToc(scrollAxis);
