@@ -240,6 +240,9 @@
         scrollAxis = scrollAxis || getScrollAxis();
         var viewportHeight = scrollAxis.viewport.height;
         var tocElement = $(selectors.toc)[0];
+        if(!tocElement){
+            return;
+        }
         var tocElementHeight = tocElement.scrollHeight;
         if (viewportHeight >= tocElementHeight) {
             return;
