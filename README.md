@@ -30,9 +30,8 @@ Theme for <http://linianhui.cnblogs.com> .
 
 本项目使用`sass`https://github.com/sass 进行编译。
 
-1. ruby用户 : `gem install sass`
-2. node用户 : `npm install -g sass`
-3. docker用户 : `docker pull lnhcode/sass:1.23.7`(https://hub.docker.com/r/lnhcode/sass)
+1. node用户 : `npm install -g sass`
+2. docker用户 : `docker pull ghcr.io/linianhui/sass:1.23.7`(https://github.com/linianhui/docker/pkgs/container/sass)
 
 热更新（结合Chrome调试用）
 
@@ -48,6 +47,6 @@ Theme for <http://linianhui.cnblogs.com> .
     docker run --rm \
                --volume $(pwd):/build \
                --workdir /build \
-               lnhcode/sass:1.23.7 \
+               ghcr.io/linianhui/sass:1.23.7 \
                sh build.sh 
     ```
