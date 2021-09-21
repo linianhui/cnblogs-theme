@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-16.04
 
     container:
-      # https://hub.docker.com/r/lnhcode/sass
+      # https://github.com/linianhui/docker/pkgs/container/sass
       image: ghcr.io/linianhui/sass:1.23.7
 
     steps:
