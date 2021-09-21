@@ -13,7 +13,7 @@ jobs:
 
     container:
       # https://hub.docker.com/r/lnhcode/sass
-      image: lnhcode/sass:1.23.7
+      image: ghcr.io/linianhui/sass:1.23.7
 
     steps:
       - name: git checkout
