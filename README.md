@@ -14,6 +14,8 @@ Theme for <http://linianhui.cnblogs.com> .
 
 主题 : `LessIsMore`
 
+页面定制 CSS 代码：勾选 "禁用模板默认CSS"
+
 页首代码
 ```html
 <script type="text/javascript">$("#mobile-style").remove();</script>
